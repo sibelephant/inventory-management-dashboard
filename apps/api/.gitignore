@@ -1,0 +1,26 @@
+# Build
+dist/
+
+# Environment
+.env
+.env.test
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+*.lcov
+.nyc_output
+
+# TypeScript
+*.tsbuildinfo
