@@ -2,27 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Edit, Download } from "lucide-react";
 import Layout from "../components/Layout";
-
-interface InventoryItem {
-  _id: string;
-  name: string;
-  productId: string;
-  category: string;
-  buyingPrice: number;
-  quantity: number;
-  unit: string;
-  expiryDate: string;
-  thresholdValue: number;
-  availability: string;
-  image?: string;
-  supplierName?: string;
-  supplierContact?: string;
-  stockLocations?: { storeName: string; stockInHand: number }[];
-}
+import type { Product } from "../types";
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState<InventoryItem | null>(null);
+  const [product, setProduct] = useState<Product | null>(null);
   const [activeTab, setActiveTab] = useState("Overview");
 
   useEffect(() => {

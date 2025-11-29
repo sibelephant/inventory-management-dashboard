@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { X, Upload } from "lucide-react";
+import type { Product } from "../types";
 
 interface AddProductModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onAdd: (product: any) => void;
+  onAdd: (product: Product) => void;
 }
 
 const AddProductModal = ({ isOpen, onClose, onAdd }: AddProductModalProps) => {
