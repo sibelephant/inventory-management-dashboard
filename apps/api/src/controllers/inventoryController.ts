@@ -19,3 +19,15 @@ export const createInventoryItem = async (req: Request, res: Response) => {
     res.status(400).json({ message: "Error creating item", error });
   }
 };
+
+export const getInventoryItem = async (req: Request, res: Response) => {
+  try {
+    const item = await InventoryItem.findById(req.params.id);
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json(item);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching item", error });
+  }
+};

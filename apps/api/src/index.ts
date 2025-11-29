@@ -22,6 +22,7 @@ mongoose
 import {
   getInventory,
   createInventoryItem,
+  getInventoryItem,
 } from "./controllers/inventoryController";
 import { register, login } from "./controllers/authController";
 import { getDashboardStats } from "./controllers/dashboardController";
@@ -34,6 +35,7 @@ app.use("/health", router);
 
 app.get("/api/inventory", getInventory);
 app.post("/api/inventory", createInventoryItem);
+app.get("/api/inventory/:id", getInventoryItem);
 app.get("/api/dashboard", getDashboardStats);
 
 app.post("/api/auth/register", register);
